@@ -20,8 +20,12 @@
 <autogen>__KeyToKey__ KeyCode::W, ModifierFlag:: CONTROL_L, KeyCode::W, ModifierFlag:: COMMAND_L</autogen>
 
 <!--  Scrolling with pointer moving and pressing a button -->
-<autogen>__KeyToKey__ KeyCode::Z, ModifierFlag:: OPTION_L, KeyCode::VK_MODIFIER_EXTRA1</autogen>
-<autogen>__PointingRelativeToScroll__ PointingButton::NONE, ModifierFlag::EXTRA1</autogen>
+<!-- <autogen>__KeyToKey__ KeyCode::Z, ModifierFlag:: OPTION_L, KeyCode::VK_MODIFIER_EXTRA1</autogen> -->
+<!-- <autogen>__PointingRelativeToScroll__ PointingButton::NONE, ModifierFlag::EXTRA1</autogen> -->
+
+<!--  Scrolling only with buttons -->
+<autogen>__KeyToKey__ KeyCode::P, ModifierFlag:: OPTION_L, KeyCode::VK_MOUSEKEY_SCROLL_DOWN</autogen>
+<autogen>__KeyToKey__ KeyCode::U, ModifierFlag:: OPTION_L,KeyCode::VK_MOUSEKEY_SCROLL_UP</autogen>
 
 </item>
 </root>
