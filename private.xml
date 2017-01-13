@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+<item>
+<name>Swap alt + h to left</name>
+<identifier>private.swap_alt_h_and_left</identifier>
+<autogen>__KeyToKey__ KeyCode::H, ModifierFlag:: OPTION_L, KeyCode::CURSOR_LEFT</autogen>
+<autogen>__KeyToKey__ KeyCode::J, ModifierFlag:: OPTION_L, KeyCode::CURSOR_DOWN</autogen>
+<autogen>__KeyToKey__ KeyCode::K, ModifierFlag:: OPTION_L, KeyCode::CURSOR_UP</autogen>
+<autogen>__KeyToKey__ KeyCode::L, ModifierFlag:: OPTION_L, KeyCode::CURSOR_RIGHT</autogen>
+<autogen>__KeyToKey__ KeyCode::M, ModifierFlag:: OPTION_L, KeyCode::CURSOR_LEFT, ModifierFlag:: COMMAND_L</autogen>
+<autogen>__KeyToKey__ KeyCode::DOT, ModifierFlag:: OPTION_L, KeyCode::CURSOR_RIGHT, ModifierFlag:: COMMAND_L</autogen>
+<autogen>__KeyToKey__ KeyCode::COMMA, ModifierFlag:: OPTION_L, KeyCode::DELETE</autogen>
+<autogen>__KeyToKey__ KeyCode::C, ModifierFlag:: CONTROL_L, KeyCode::C, ModifierFlag:: COMMAND_L</autogen>
+<autogen>__KeyToKey__ KeyCode::V, ModifierFlag:: CONTROL_L, KeyCode::V, ModifierFlag:: COMMAND_L</autogen>
+<autogen>__KeyToKey__ KeyCode::S, ModifierFlag:: CONTROL_L, KeyCode::S, ModifierFlag:: COMMAND_L</autogen>
+<autogen>__KeyToKey__ KeyCode::A, ModifierFlag:: CONTROL_L, KeyCode::A, ModifierFlag:: COMMAND_L</autogen>
+<autogen>__KeyToKey__ KeyCode::F, ModifierFlag:: CONTROL_L, KeyCode::F, ModifierFlag:: COMMAND_L</autogen>
+<autogen>__KeyToKey__ KeyCode::Z, ModifierFlag:: CONTROL_L, KeyCode::Z, ModifierFlag:: COMMAND_L</autogen>
+<autogen>__KeyToKey__ KeyCode::X, ModifierFlag:: CONTROL_L, KeyCode::X, ModifierFlag:: COMMAND_L</autogen>
+<autogen>__KeyToKey__ KeyCode::W, ModifierFlag:: CONTROL_L, KeyCode::W, ModifierFlag:: COMMAND_L</autogen>
+</item>
+</root>
