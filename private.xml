@@ -18,5 +18,10 @@
 <autogen>__KeyToKey__ KeyCode::Z, ModifierFlag:: CONTROL_L, KeyCode::Z, ModifierFlag:: COMMAND_L</autogen>
 <autogen>__KeyToKey__ KeyCode::X, ModifierFlag:: CONTROL_L, KeyCode::X, ModifierFlag:: COMMAND_L</autogen>
 <autogen>__KeyToKey__ KeyCode::W, ModifierFlag:: CONTROL_L, KeyCode::W, ModifierFlag:: COMMAND_L</autogen>
+
+<!--  Scrolling with pointer moving and pressing a button -->
+<autogen>__KeyToKey__ KeyCode::Z, ModifierFlag:: OPTION_L, KeyCode::VK_MODIFIER_EXTRA1</autogen>
+<autogen>__PointingRelativeToScroll__ PointingButton::NONE, ModifierFlag::EXTRA1</autogen>
+
 </item>
 </root>
