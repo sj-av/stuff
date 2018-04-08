@@ -4,6 +4,11 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance force
 
+; # - Win (Windows logo key)
+; ! - is for ALT key
+; ^ - is for CTRL key
+; + - is for CTRL key
+; & - An ampersand may be used between any two keys or mouse buttons to combine them into a custom hotkey.
 
 ; ------------------ Basic movement ------------------
 
@@ -23,14 +28,14 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 <^<!+l::Send, ^+{Right}
 
 <!m::Send, {Home}
-<!.::Send, {End}
-<!,::Send, {Backspace}
+<!ю::Send, {End}
+<!б::Send, {Backspace}
 
 <!+m::Send, +{Home}
-<!+.::Send, +{End}
+<!+ю::Send, +{End}
 
 <^<!m::Send, ^{Home}
-<^<!.::Send, ^{End}
+<^<!ю::Send, ^{End}
 
 <!+h::Send, +{Left}
 <!+l::Send, +{Right}
@@ -53,7 +58,7 @@ Return
      Send, {Up}
 Return
 
-; --- SQLyog hotkeys remap ---
+; --- SQLyog hotkeys remap START ---
 #IfWinActive ahk_exe SQLyog.exe
 
 <^Return:: 
@@ -84,11 +89,49 @@ Return
 	Send, ^y
 Return
 
-#IfWinActive
+; --- SQLyog hotkeys remap END ---
 
 
-;^+F::
-;	Send, ^c
-;	Sleep 100
-;	Run, http://google.com/search?q=%clipboard%
-;Return
+; --- Switch between running instances of one application ---
+; --- START ---
+!ё:: ; Next window
+WinGetClass, ActiveClass, A
+WinGet, WinClassCount, Count, ahk_class %ActiveClass%
+IF WinClassCount = 1
+    Return
+Else
+WinGet, List, List, % "ahk_class " ActiveClass
+Loop, % List
+{
+    index := List - A_Index + 1
+    WinGet, State, MinMax, % "ahk_id " List%index%
+    if (State <> -1)
+    {
+        WinID := List%index%
+        break
+    }
+}
+WinActivate, % "ahk_id " WinID
+return
+
+!^ё:: ; Last window
+WinGetClass, ActiveClass, A
+WinGet, WinClassCount, Count, ahk_class %ActiveClass%
+IF WinClassCount = 1
+    Return
+Else
+WinGet, List, List, % "ahk_class " ActiveClass
+Loop, % List
+{
+    index := List - A_Index + 1
+    WinGet, State, MinMax, % "ahk_id " List%index%
+    if (State <> -1)
+    {
+        WinID := List%index%
+        break
+    }
+}
+WinActivate, % "ahk_id " WinID
+return
+
+; --- END ---
