@@ -135,3 +135,8 @@ WinActivate, % "ahk_id " WinID
 return
 
 ; --- END ---
+
+; Toggle Windows navigation panel
+#IfWinActive ahk_class CabinetWClass
+#a::
+Send !d!vn{enter}ln
