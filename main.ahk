@@ -27,15 +27,15 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 <^<!+h::Send, ^+{Left}
 <^<!+l::Send, ^+{Right}
 
-<!m::Send, {Home}
-<!ю::Send, {End}
-<!б::Send, {Backspace}
+<!SC032::Send, {Home}		; "m" - button on eng layout
+<!SC034::Send, {End}		; "." - button on eng layout
+<!SC033::Send, {Backspace} 	; "," - button on eng layout
 
-<!+m::Send, +{Home}
-<!+ю::Send, +{End}
+<!+SC032::Send, +{Home}		; "m" - button on eng layout
+<!+SC034::Send, +{End}		; "." - button on eng layout
 
-<^<!m::Send, ^{Home}
-<^<!ю::Send, ^{End}
+<^<!SC032::Send, ^{Home}  	; "m" - button on eng layout
+<^<!SC034::Send, ^{End}   	; "." - button on eng layout
 
 <!+h::Send, +{Left}
 <!+l::Send, +{Right}
@@ -94,7 +94,7 @@ Return
 
 ; --- Switch between running instances of one application ---
 ; --- START ---
-!ё:: ; Next window
+!SC029:: ; Next window 			; "`" - button on eng layout
 WinGetClass, ActiveClass, A
 WinGet, WinClassCount, Count, ahk_class %ActiveClass%
 IF WinClassCount = 1
@@ -114,7 +114,7 @@ Loop, % List
 WinActivate, % "ahk_id " WinID
 return
 
-!^ё:: ; Last window
+!^SC029:: ; Last window  		; "`" - button on eng layout
 WinGetClass, ActiveClass, A
 WinGet, WinClassCount, Count, ahk_class %ActiveClass%
 IF WinClassCount = 1
@@ -140,3 +140,28 @@ return
 #IfWinActive ahk_class CabinetWClass
 #a::
 Send !d!vn{enter}ln
+
+
+;Open google
+#f::
+    Run, http://google.com
+Return
+
+;Search in google text in clipboard
+#+f::
+    Send, ^c
+    Sleep, 100
+    Run, http://google.com/search?q=%clipboard%
+Return
+
+;Open youtube
+#y::
+    Run, https://youtube.com
+Return
+
+;Search in youtube
+#+y::
+    Send, ^c
+    Sleep, 100
+    Run, https://www.youtube.com/results?search_query=%clipboard%
+Return
