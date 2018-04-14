@@ -7,7 +7,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; # - Win (Windows logo key)
 ; ! - is for ALT key
 ; ^ - is for CTRL key
-; + - is for CTRL key
+; + - is for SHIFT key
 ; & - An ampersand may be used between any two keys or mouse buttons to combine them into a custom hotkey.
 
 ; ------------------ Basic movement ------------------
@@ -139,7 +139,9 @@ return
 ; Toggle Windows navigation panel
 #IfWinActive ahk_class CabinetWClass
 #a::
-Send !d!vn{enter}ln
+    Send, !3!vn{enter}ln
+Return
+#IfWinActive
 
 
 ;Open google
@@ -155,7 +157,7 @@ Return
 Return
 
 ;Open youtube
-#y::
+#SC015::
     Run, https://youtube.com
 Return
 
