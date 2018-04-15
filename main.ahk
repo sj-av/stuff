@@ -47,6 +47,11 @@ Capslock::Esc
      Send, {Enter}
 Return
 
+;Switch desktops
+^#l::Send, ^#{Right}
+
+^#h::Send, ^#{Left}
+
 
 ; ------------------ End basic movement ------------------
 
