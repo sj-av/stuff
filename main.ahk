@@ -12,8 +12,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ; ------------------ Basic movement ------------------
 
-#<!Capslock::Capslock
-#Capslock::Esc
+Capslock::Esc
+#Capslock::CapsLock
 
 
 <!j::Send, {Down}
