@@ -12,52 +12,57 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ; ------------------ Basic movement ------------------
 
-Capslock::Esc
+
+; Capslock to Esc
+;Capslock::Esc
+
+; Win+CapsLock to CapsLock
 #Capslock::CapsLock
 
+; CapsLock to Alt + Shift (to switch language)
+CapsLock::Send {shift down}{alt down}{alt up}{shift up}{Esc} 
 
-<!j::Send, {Down}
-<!k::Send, {Up}
-<!h::Send, {Left}
-<!l::Send, {Right}
+#j::Send, {Down}
+#k::Send, {Up}
+#h::Send, {Left}
+#l::Send, {Right}
 
-<^<!l::Send, ^{Right}
-<^<!h::Send, ^{Left}
+<^#l::Send, ^{Right}
+<^#h::Send, ^{Left}
 
-<^<!+h::Send, ^+{Left}
-<^<!+l::Send, ^+{Right}
+<^#+h::Send, ^+{Left}
+<^#+l::Send, ^+{Right}
 
-<!SC032::Send, {Home}		; "m" - button on eng layout
-<!SC034::Send, {End}		; "." - button on eng layout
-<!SC033::Send, {Backspace} 	; "," - button on eng layout
+#SC032::Send, {Home}		; "m" - button on eng layout
+#SC034::Send, {End}		; "." - button on eng layout
+#SC033::Send, {Backspace} 	; "," - button on eng layout
 
-<!+SC032::Send, +{Home}		; "m" - button on eng layout
-<!+SC034::Send, +{End}		; "." - button on eng layout
+#+SC032::Send, +{Home}		; "m" - button on eng layout
+#+SC034::Send, +{End}		; "." - button on eng layout
 
-<^<!SC032::Send, ^{Home}  	; "m" - button on eng layout
-<^<!SC034::Send, ^{End}   	; "." - button on eng layout
+#<!SC032::Send, ^{Home}  	; "m" - button on eng layout
+#<!SC034::Send, ^{End}   	; "." - button on eng layout
 
-<!+h::Send, +{Left}
-<!+l::Send, +{Right}
-<!+k::Send, +{Up}
-<!+j::Send, +{Down}
+#+h::Send, +{Left}
+#+l::Send, +{Right}
+#+k::Send, +{Up}
+#+j::Send, +{Down}
 
-<!o::
+#o::
      Send, {End}
      Send, {Enter}
 Return
 
 ;Switch desktops
-^#l::Send, ^#{Right}
-
-^#h::Send, ^#{Left}
+;^#l::Send, ^#{Right}
+;^#h::Send, ^#{Left}
 
 
 ; ------------------ End basic movement ------------------
 
 
 ;Enter empty line above
-<!+o::
+#+o::
      Send, {Home}
      Send, {Enter}
      Send, {Up}
