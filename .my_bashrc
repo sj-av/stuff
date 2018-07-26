@@ -1,0 +1,29 @@
+alias xs='sudo /opt/lampp/lampp start'
+alias xr='sudo /opt/lampp/lampp restart'
+alias xt='sudo /opt/lampp/lampp stop'
+
+alias as='sudo /opt/lampp/lampp startapache'
+alias at='sudo /opt/lampp/lampp stopapache'
+alias ar='sudo /opt/lampp/lampp reloadapache'
+
+alias ms='sudo /opt/lampp/lampp startmysql'
+alias mt='sudo /opt/lampp/lampp stopmysql'
+alias mr='sudo /opt/lampp/lampp reloadmysql'
+
+alias status='sudo /opt/lampp/lampp status'
+
+alias pi='sudo vim /opt/lampp/etc/php.ini'
+
+alias tinker='rlwrap php artisan tinker'
+alias p='phpunit'
+alias pf='phpunit --filter'
+alias pa='php artisan'
+alias gs='git status'
+alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+PS1="\[$IBlack\]┌—————(\[$BWhite\]\u\[$IBlack\])—————(\[$IBlue\]\w\[$IBlack\]) \n└> \[$BRed\]$ \[$White\]"
+
+# git add, commit and push
+gacp() {
+    git add . && git commit -m "$1" && git push
+}
