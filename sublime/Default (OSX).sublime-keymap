@@ -1,0 +1,7 @@
+[
+	{ "keys": ["ctrl+e"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+	{ "keys": ["option+shift+8"], "command": "toggle_bookmark" },
+	{ "keys": ["ctrl+option+shift+0"], "command": "clear_bookmarks" },
+	{ "keys": ["option+shift+0"], "command": "next_bookmark" },
+	{ "keys": ["option+shift+9"], "command": "prev_bookmark" },
+]
