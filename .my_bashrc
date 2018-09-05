@@ -11,19 +11,56 @@ alias mt='sudo /opt/lampp/lampp stopmysql'
 alias mr='sudo /opt/lampp/lampp reloadmysql'
 
 alias status='sudo /opt/lampp/lampp status'
+alias scr='flameshot gui'
 
 alias pi='sudo vim /opt/lampp/etc/php.ini'
+alias on='sudo php ~/Stuff/pi.php on && ar'
+alias off='sudo php ~/Stuff/pi.php off && ar'
+alias ttl='cat /proc/sys/net/ipv4/ip_default_ttl'
+alias work='cd ~/Workspace'
+alias tag='cd ~/Workspace/Tag24'
+alias down='cd ~/Downloads'
+alias dev='npm run dev'
+alias live='livereloadx | grep "notify: application.js"'
+
+# --- Laravel stuff ---
 
 alias tinker='rlwrap php artisan tinker'
 alias p='phpunit'
 alias pf='phpunit --filter'
 alias pa='php artisan'
+alias fresh='php artisan migrate:fresh'
+alias seed='php artisan db:seed'
+
+# --- End Laravel stuff ---
+
+# --- Git stuff ---
+
 alias gs='git status'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gb='git branch -a'
+alias pull='git pull'
+alias push='git push'
+alias ga='git add .'
 
-PS1="\[$IBlack\]┌—————(\[$BWhite\]\u\[$IBlack\])—————(\[$IBlue\]\w\[$IBlack\]) \n└> \[$BRed\]$ \[$White\]"
+# --- End GIT stuff ---
+
+PS1="\[$IBlack\]┌(\[$IBlue\]\w\[$IBlack\]) \$(parse_git_branch)\[\033[00m\]\n└> \[$BRed\]$ \[$White\]"
+
+#git commit
+gc() {
+    git commit -m "$1" 
+}
+
+# git add all and commit
+gac() {
+    git add . && git commit -m "$1"
+}
 
 # git add, commit and push
 gacp() {
     git add . && git commit -m "$1" && git push
+}
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
