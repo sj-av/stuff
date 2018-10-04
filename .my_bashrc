@@ -1,3 +1,4 @@
+
 alias xs='sudo /opt/lampp/lampp start'
 alias xr='sudo /opt/lampp/lampp restart'
 alias xt='sudo /opt/lampp/lampp stop'
@@ -14,8 +15,8 @@ alias status='sudo /opt/lampp/lampp status'
 alias scr='flameshot gui'
 
 alias pi='sudo vim /opt/lampp/etc/php.ini'
-alias on='sudo php ~/Stuff/pi.php on && ar'
-alias off='sudo php ~/Stuff/pi.php off && ar'
+alias on='sudo php ~/Stuff/pi.php on'
+alias off='sudo php ~/Stuff/pi.php off'
 alias ttl='cat /proc/sys/net/ipv4/ip_default_ttl'
 alias work='cd ~/Workspace'
 alias tag='cd ~/Workspace/Tag24'
@@ -31,6 +32,8 @@ alias pf='phpunit --filter'
 alias pa='php artisan'
 alias fresh='php artisan migrate:fresh'
 alias seed='php artisan db:seed'
+#last migration check
+alias mtest='php artisan migrate && php artisan migrate:rollback --step=1'
 
 # --- End Laravel stuff ---
 
@@ -42,10 +45,11 @@ alias gb='git branch -a'
 alias pull='git pull'
 alias push='git push'
 alias ga='git add .'
+alias gr='git reset --hard'
 
 # --- End GIT stuff ---
 
-PS1="\[$IBlack\]┌(\[$IBlue\]\w\[$IBlack\]) \$(parse_git_branch)\[\033[00m\]\n└> \[$BRed\]$ \[$White\]"
+PS1="\[$IBlack\]┌(\[$IBlue\]\w\[$IBlack\]) \[\033[32m\]\$(parse_git_branch)\[\033[00m\]\n└> \[$BRed\]$ \[$White\]"
 
 #git commit
 gc() {
@@ -55,6 +59,9 @@ gc() {
 # git add all and commit
 gac() {
     git add . && git commit -m "$1"
+}
+c(){
+    git checkout "$1"
 }
 
 # git add, commit and push
