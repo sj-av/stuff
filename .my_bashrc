@@ -49,6 +49,10 @@ alias gr='git reset --hard'
 
 # --- End GIT stuff ---
 
+# --- Tag 24 stuff ---
+alias ww='watchify -e resources/assets/js/application.js -t vueify -t babelify -o public/js/application.js'
+# --- End Tag24 stuff ---
+
 PS1="\[$IBlack\]┌(\[$IBlue\]\w\[$IBlack\]) \[\033[32m\]\$(parse_git_branch)\[\033[00m\]\n└> \[$BRed\]$ \[$White\]"
 
 #git commit
@@ -62,6 +66,9 @@ gac() {
 }
 c(){
     git checkout "$1"
+}
+m(){
+    git merge "$1"
 }
 
 # git add, commit and push
