@@ -1,0 +1,18 @@
+# Screenshot tool
+alias scr='flameshot gui'
+
+alias work='cd ~/Workspace'
+alias tag='cd ~/Workspace/Tag24'
+alias down='cd ~/Downloads'
+alias h='hstr'
+
+# --- Laravel stuff ---
+alias tinker='rlwrap php artisan tinker'
+alias p='phpunit'
+alias pf='phpunit --filter'
+alias pa='php artisan'
+alias fresh='php artisan migrate:fresh'
+alias seed='php artisan db:seed'
+#last migration check
+alias mtest='php artisan migrate && php artisan migrate:rollback --step=1'
+# --- End Laravel stuff ---
