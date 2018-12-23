@@ -16,3 +16,7 @@ alias seed='php artisan db:seed'
 #last migration check
 alias mtest='php artisan migrate && php artisan migrate:rollback --step=1'
 # --- End Laravel stuff ---
+#
+#
+#
+alias apr='sudo /etc/init.d/apache2 restart'
