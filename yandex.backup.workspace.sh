@@ -43,8 +43,8 @@ else
 	if [ "$remote_checksum" != "$checksum" ]; then
 		echo "Remote checksum is not equal to a local one"
 		echo "$(date) Remote checksum is not equal to a local one" >> "$log_path"
-		echo "$(date) Remote: $remote_checksum" >> "$log_path"
-		echo "$(date) Local: $remote_checksum" >> "$log_path"
+		echo "$(date) Remote: '$remote_checksum'" >> "$log_path"
+		echo "$(date) Local: $checksum" >> "$log_path"
 		do_upload='YES'
 	else
 		echo "Local and remote hash files are equal"
