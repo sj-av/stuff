@@ -1,6 +1,6 @@
 archive_name="Workspace($(hostname)).zip"
 workspace_path="/home/smdslim/Workspace"
-temp_path="/media/smdslim/SECONDARY/Temp"
+temp_path="/run/media/smdslim/SECONDARY/Temp"
 archive_remote_path="/Documents/WorkspaceBackups/$archive_name"
 checksum_remote_path="/Documents/WorkspaceBackups/$archive_name.hash"
 obtain_upload_url="https://cloud-api.yandex.net/v1/disk/resources/upload?path=$archive_remote_path&overwrite=true"
@@ -19,7 +19,7 @@ echo "$(date) Making archive" >> "$log_path"
 cd "$temp_path"
 # -FS to rewrite archive data
 # -q is for quiet mode
-zip -q -FSr "$archive_name" "$workspace_path" -x *Workspace/*/vendor\* *Workspace/*/node_modules\* *.wav
+zip -q -FSr "$archive_name" "$workspace_path" -x *Workspace/*/vendor\* *Workspace/*/node_modules\* *.wav *Workspace/*/.git\* *Workspace/*/.idea\*
 
 checksum=$( sha1sum "$temp_path/$archive_name")
 touch "$temp_path/$archive_name.hash"
