@@ -18,7 +18,8 @@ echo "$(date) Making archive" >> "$log_path"
 
 cd "$temp_path"
 # -FS to rewrite archive data
-zip -q -FSr "$archive_name" "$workspace_path"
+# -q is for quiet mode
+zip -q -FSr "$archive_name" "$workspace_path" -x *Workspace/*/vendor\* *Workspace/*/node_modules\* *.wav
 
 checksum=$( sha1sum "$temp_path/$archive_name")
 touch "$temp_path/$archive_name.hash"
